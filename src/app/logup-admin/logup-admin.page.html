@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+  <video autoplay muted loop id="video-background" preload="auto" onended="this.play()">
+    <source src="../assets/Videos/fondo2.mp4" type="video/mp4">
+  </video>
+  <div class="button-container">
+    <ion-label class="data-label">USUARIO:</ion-label>
+    <ion-input class="data-input"></ion-input>
+    
+    <ion-label class="data-label">CONTRASEÑA:</ion-label>
+    <ion-input class="data-input" type="password"></ion-input>
+
+    <ion-label class="data-label">TELEFONO:</ion-label>
+    <ion-input class="data-input"></ion-input>
+    
+      <ion-button expand="block" (click)="goToHome()">Registrarse</ion-button>
+  </div>
+</ion-content>

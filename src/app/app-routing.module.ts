@@ -11,6 +11,30 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'login-admin',
+    loadChildren: () => import('./login-admin/login-admin.module').then( m => m.LoginAdminPageModule)
+  },
+  {
+    path: 'logup-admin',
+    loadChildren: () => import('./logup-admin/logup-admin.module').then( m => m.LogupAdminPageModule)
+  },
+  {
+    path: 'seleccion',
+    loadChildren: () => import('./seleccion/seleccion.module').then( m => m.SeleccionPageModule)
+  },
+  {
+    path: 'notas-pon',
+    loadChildren: () => import('./notas-pon/notas-pon.module').then( m => m.NotasPonPageModule)
+  },
+  {
+    path: 'deser-anual',
+    loadChildren: () => import('./deser-anual/deser-anual.module').then( m => m.DeserAnualPageModule)
+  },
+  {
+    path: 'estudi-anual',
+    loadChildren: () => import('./estudi-anual/estudi-anual.module').then( m => m.EstudiAnualPageModule)
+  },
 ];
 
 @NgModule({
