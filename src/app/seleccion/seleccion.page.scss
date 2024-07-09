@@ -41,11 +41,12 @@ ion-content {
   padding: 10px; /* Opcional: Añade un poco de espacio interno para que el borde no esté pegado al texto */
 }
 
+//posicion y tamaño del boton
 .button-container ion-button {
-  margin: 25px;
-  width: 70%;
-  height: 120px;
-  font-size: 1em;
+  margin: 40px;
+  width: 50%;
+  height: 170px;
+  font-size: 2em;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -53,7 +54,7 @@ ion-content {
 }
 
 .data-input {
-  width: 15%; /* Ocupa todo el ancho del label */
+  width: 25%; /* Ocupa todo el ancho del label */
   margin: 25px;
   transform: translate(0, -160px); /* Ajusta según sea necesario */
   text-align: center;
@@ -71,10 +72,11 @@ ion-content {
 .button-container ion-button.button-solid:hover {
   --background: rgb(255, 0, 0) !important; /* Cambia el color de fondo al pasar el mouse */
 }
+//AGRANDAR EL CONTENIDO
 
 .button-icon {
   display: block;
-  width: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  width: 140px; /* Ajusta el tamaño de la imagen según tus necesidades */
   margin-right: 20px; /* Ajusta la distancia entre la imagen y el texto */
   float: left; /* Permite que la imagen flote a la izquierda dentro del botón */
 }

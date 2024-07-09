@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { LogupAdministradorService } from './logup-admin.service'; // Asegúrate de que la ruta sea correcta
 
 @Component({
   selector: 'app-logup-admin',
@@ -7,12 +8,27 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./logup-admin.page.scss'],
 })
 export class LogupAdminPage implements OnInit {
+  correo: string = '';
+  usuario: string = '';
+  clave: string = '';
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private logupAdminService: LogupAdministradorService) { }
 
   ngOnInit() {
   }
-  goToHome(){
-    this.navCtrl.navigateForward('/home');
+
+  registrar() {
+    const newAdmin = {
+      Correo: this.correo,
+      Usuario: this.usuario,
+      Clave: this.clave
+    };
+
+    this.logupAdminService.registrarAdmin(newAdmin).subscribe(response => {
+      console.log('Admin registrado', response);
+      this.navCtrl.navigateForward('/home');
+    }, error => {
+      console.error('Error registrando admin', error);
+    });
   }
 }
