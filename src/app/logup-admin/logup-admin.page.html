@@ -3,15 +3,15 @@
     <source src="../assets/Videos/fondo2.mp4" type="video/mp4">
   </video>
   <div class="button-container">
+    <ion-label class="data-label">CORREO:</ion-label>
+    <ion-input [(ngModel)]="correo" class="data-input"></ion-input>
+    
     <ion-label class="data-label">USUARIO:</ion-label>
-    <ion-input class="data-input"></ion-input>
-    
-    <ion-label class="data-label">CONTRASEÑA:</ion-label>
-    <ion-input class="data-input" type="password"></ion-input>
+    <ion-input [(ngModel)]="usuario" class="data-input"></ion-input>
 
-    <ion-label class="data-label">TELEFONO:</ion-label>
-    <ion-input class="data-input"></ion-input>
+    <ion-label class="data-label">CLAVE:</ion-label>
+    <ion-input [(ngModel)]="clave" class="data-input" type="password"></ion-input>
     
-      <ion-button expand="block" (click)="goToHome()">Registrarse</ion-button>
+    <ion-button expand="block" (click)="registrar()">Registrarse</ion-button>
   </div>
 </ion-content>

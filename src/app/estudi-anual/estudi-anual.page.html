@@ -1,20 +1,26 @@
+<ion-header class="header-red">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToSeleccion()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="title-bold">GRÁFICO</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true">
-    <video autoplay muted loop id="video-background" preload="auto" onended="this.play()">
-      <source src="../assets/Videos/fondo5.mp4" type="video/mp4">
-    </video>
-    <!-- <div class="button-container">
-      <ion-button expand="block" (click)="goToPanelControl()">
-        <img src="../assets/icon/seleccion1.png" alt="Icono" class="button-icon">
-        <span class="button-text">Panel Control</span>
-      </ion-button>
-      <ion-button expand="block" (click)="goToEstadisticas()">
-        <img src="../assets/icon/seleccion2.png" alt="Icono" class="button-icon">
-        <span class="button-text">Estadisticas</span>
-      </ion-button>
-      <ion-button expand="block" (click)="goToListaClips()">
-        <img src="../assets/icon/seleccion3.png" alt="Icono" class="button-icon">
-        <span class="button-text">Lista Clips</span>
-      </ion-button>
-  </div> -->
-  </ion-content>
-  
+  <video autoplay muted loop id="video-background" preload="auto" onended="this.play()">
+    <source src="../assets/Videos/fondo4.mp4" type="video/mp4">
+  </video>
+  <div class="title-container">
+    <h1 class="main-title">MUESTRA DEL GRÁFICO</h1>
+  </div>
+  <div class="button-container">
+    <!-- Aquí agregar el contenedor del gráfico de Pentaho -->
+    <div id="pentaho-container">
+      <iframe id="pentaho-iframe" src="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Ahome%3Aconsultas%3Anotas-desertores.saiku" frameborder="0"></iframe>
+    </div>
+  </div>
+</ion-content>

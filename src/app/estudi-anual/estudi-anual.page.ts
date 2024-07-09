@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -8,18 +8,20 @@ import { NavController } from '@ionic/angular';
 })
 export class EstudiAnualPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private elRef: ElementRef) { }
 
   ngOnInit() {
+    this.goToNotasDesertores(); // Llama a la función al inicializar la página
   }
 
-  // goToPanelControl(){
-  //   this.navCtrl.navigateForward('/panel-control');
-  // }
-  // goToEstadisticas(){
-  //   this.navCtrl.navigateForward('/estadisticas');
-  // }
-  // goToListaClips(){
-  //   this.navCtrl.navigateForward('/lista-clips');
-  // }
+  goToSeleccion() {
+    this.navCtrl.navigateForward('/seleccion');
+  }
+
+  goToNotasDesertores() {
+    const pentahoContainer = this.elRef.nativeElement.querySelector('#pentaho-container');
+    pentahoContainer.innerHTML = `
+      <iframe src="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Ahome%3Aconsultas%3Anotas-desertores.saiku" style="width:100%; height:1100px; border:none;"></iframe>
+    `;
+  }
 }
