@@ -1,6 +1,5 @@
-/* Custom styles for video background */
+/* Estilos para el video de fondo */
 #video-background {
-  /* tus estilos actuales para el video */
   position: fixed;
   top: 0;
   left: 0;
@@ -8,80 +7,118 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  /* aplica la animación */
   animation: moveBackground 10s linear infinite alternate;
 }
 
+/* Asegura que ion-content esté en frente del video */
 ion-content {
   position: relative;
-  z-index: 1; /* Ensure the content is in front of the video */
+  z-index: 1;
+  padding-top: 56px; /* Ajusta según la altura del encabezado */
 }
 
-// .button-container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
-//   position: relative;
-//   z-index: 1;
-//   margin-top: 10vh; /* Ajusta la distancia desde la parte superior */
-// }
+/* Estilos para la barra de herramientas dentro del encabezado */
+ion-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  ion-toolbar {
+    width: 100%;
+    max-width: 100%;
+    --background: rgb(126, 11, 11); /* Color de fondo de la toolbar */
+  }
+}
 
-.data-label {
-  width: 25%;
+/* Ajuste para el título dentro de ion-toolbar */
+ion-title.title-bold {
+  max-width: 100%;
+  white-space: nowrap; /* Evita que el título se rompa en varias líneas */
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos si el título es demasiado largo */
+}
+
+/* Estilos para el contenedor del iframe de Pentaho */
+#pentaho-container {
+  position: absolute;
+  top: calc(15vh + 56px); /* Ajusta según la altura del encabezado */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: calc(75vh - 56px); /* Ajusta según la altura del encabezado */
+  border: 1px solid #000000;
+  background-color: #000000;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: both;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el iframe de Pentaho */
+#pentaho-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Estilos para el contenedor del título principal */
+.title-container {
+  position: absolute;
+  top: calc(56px + 30px); /* Ajusta según la altura del encabezado */
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+/* Estilos para el título principal */
+.title-container h1 {
   font-weight: bold;
-  text-align: center;
-  transform: translate(-220px, -160px); /* Mueve el input 50px hacia la derecha */
-}
-
-.data-label1 {
-  width: 25%;
-  text-align: center;
-  transform: translate(-220px, -160px); /* Mueve el input 50px hacia la derecha */
-  font-size: 5em; /* Ajusta el tamaño de la letra según tus necesidades */
-  font-weight: bold; /* Hace que el texto sea negrita */
-  padding: 10px; /* Opcional: Añade un poco de espacio interno para que el borde no esté pegado al texto */
-  
-}
-
-.button-container ion-button {
-  margin: 50px;
-  width: 40%;
-  height: 190px;
-  transform: translate(640px, 220px); /* Mueve el input 50px hacia la derecha */
   font-size: 3em;
+}
+
+/* Estilos adicionales para botones */
+.button-container ion-button {
+  margin: 30px;
+  width: 30%;
+  height: 120px;
+  transform: translate(640px, 60px); /* Ajusta según tus necesidades */
+  font-size: 2em;
   font-weight: bold;
 }
 
-.data-input {
-  width: 15%; /* Ocupa todo el ancho del label */
-  margin: 15px;
-  transform: translate(-220px, -160px); /* Mueve el input 50px hacia la derecha */
-  text-align: center;
-  background-color: white; /* Fondo blanco */
-  padding: 15px; /* Añade un poco de espacio interno para separar el texto del borde */
-  color: black; /* Color del texto negro */
-  font-weight: bold;
-}
+/* Estilos para botones con fondo sólido */
 .button-container ion-button.button-solid {
-  --background: rgb(52, 48, 165) !important; /* Sobrescribe el color de fondo a rojo */
-  --color: white !important; /* Sobrescribe el color del texto a blanco */
+  --background: rgb(52, 48, 165) !important; /* Color de fondo */
+  --color: white !important; /* Color de texto */
 }
 
+/* Cambio de color al pasar el mouse sobre botones sólidos */
 .button-container ion-button.button-solid:hover {
-  --background: rgb(255, 0, 0) !important; /* Cambia el color de fondo al pasar el mouse */
-}
-.button-icon {
-  display: block;
-  width: 140px; /* Ajusta el tamaño de la imagen según tus necesidades */
-  margin-right: 30px; /* Ajusta la distancia entre la imagen y el texto */
-  float: left; /* Permite que la imagen flote a la izquierda dentro del botón */
+  --background: rgb(255, 0, 0) !important; /* Color de fondo al pasar el mouse */
 }
 
-.button-text {
-  display: block;
-  overflow: hidden; /* Evita que el texto se superponga a la imagen */
+/* Estilos para elementos de entrada de datos */
+.data-input {
+  width: 15%;
+  margin: 15px;
+  transform: translate(-220px, -160px); /* Ajusta según tus necesidades */
   text-align: center;
+  background-color: white;
+  padding: 15px;
+  color: black;
+  font-weight: bold;
+}
+
+/* Animación para el video de fondo */
+@keyframes moveBackground {
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.title-bold {
   font-weight: bold;
 }

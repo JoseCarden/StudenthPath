@@ -3,11 +3,11 @@ import { NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http'; // Asegúrate de importar HttpClientModule si no está
 
 @Component({
-  selector: 'app-seleccion',
-  templateUrl: './seleccion.page.html',
-  styleUrls: ['./seleccion.page.scss'],
+  selector: 'app-chat-bot',
+  templateUrl: './chat-bot.page.html',
+  styleUrls: ['./chat-bot.page.scss'],
 })
-export class SeleccionPage implements OnInit {
+export class ChatBotPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,

@@ -1,7 +1,27 @@
-<ion-content [fullscreen]="true">
-    <video autoplay muted loop id="video-background" preload="auto" onended="this.play()">
-      <source src="../assets/Videos/fondo4.mp4" type="video/mp4">
-    </video>
-    
-  </ion-content>
-  
+<ion-header class="header-red">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToSeleccion()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="title-bold">GRÁFICO</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="llevarP()">LLEVAME A PENTAHO</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <video autoplay muted loop id="video-background" preload="auto" onended="this.play()">
+    <source src="../assets/Videos/fondo4.mp4" type="video/mp4">
+  </video>
+  <div class="title-container">
+    <h1 class="main-title">NOTAS DESERTORES</h1>
+  </div>
+  <div class="button-container">
+    <div id="pentaho-container">
+      <iframe id="pentaho-iframe" src="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Ahome%3Aconsultas%3Aescala.saiku" frameborder="0"></iframe>
+    </div>
+  </div>
+</ion-content>

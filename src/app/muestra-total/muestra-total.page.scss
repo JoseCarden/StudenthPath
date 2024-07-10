@@ -64,6 +64,24 @@ ion-title.title-bold {
   border: none;
 }
 
+#pentaho-container-2 {
+  position: absolute;
+  top: calc(90vh + 56px); /* Ajusta según la altura del encabezado */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: calc(75vh - 56px); /* Ajusta según la altura del encabezado */
+  border: 1px solid #000000;
+  background-color: #000000;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: both;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
 /* Estilos para el contenedor del título principal */
 .title-container {
   position: absolute;
