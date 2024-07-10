@@ -7,21 +7,20 @@
     </ion-buttons>
     <ion-title class="title-bold">GRÁFICO</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="generatePDF()">LLEVAME A PENTAHO</ion-button>
+      <ion-button (click)="llevarP()">LLEVAME A PENTAHO</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <video autoplay muted loop id="video-background" preload="auto" onended="this.play()">
     <source src="../assets/Videos/fondo4.mp4" type="video/mp4">
   </video>
   <div class="title-container">
-    <h1 class="main-title">CARRERAS REGISTRADAS</h1>
+    <h1 class="main-title">MUESTRA TOTAL</h1>
   </div>
   <div class="button-container">
-    <div id="pentaho-container">
-      <iframe id="pentaho-iframe" src="http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Ahome%3Aconsultas%3Anombre-carrera.saiku" frameborder="0"></iframe>
-    </div>
+    <div id="pentaho-container"></div>
+    <div id="pentaho-container-2"></div>
   </div>
 </ion-content>

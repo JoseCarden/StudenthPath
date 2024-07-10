@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'estudi-anual',
     loadChildren: () => import('./estudi-anual/estudi-anual.module').then( m => m.EstudiAnualPageModule)
   },
+  {
+    path: 'muestra-total',
+    loadChildren: () => import('./muestra-total/muestra-total.module').then( m => m.MuestraTotalPageModule)
+  },
 ];
 
 @NgModule({

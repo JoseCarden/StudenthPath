@@ -14,10 +14,16 @@
 ion-content {
   position: relative;
   z-index: 1;
+  padding-top: 56px; /* Ajusta según la altura del encabezado */
 }
 
 /* Estilos para la barra de herramientas dentro del encabezado */
 ion-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
   ion-toolbar {
     width: 100%;
     max-width: 100%;
@@ -36,7 +42,7 @@ ion-title.title-bold {
 /* Estilos para el contenedor del iframe de Pentaho */
 #pentaho-container {
   position: absolute;
-  top: calc(11vh + 56px); /* Ajusta según la altura del encabezado */
+  top: calc(15vh + 56px); /* Ajusta según la altura del encabezado */
   left: 50%;
   transform: translateX(-50%);
   width: 90vw;
@@ -61,7 +67,7 @@ ion-title.title-bold {
 /* Estilos para el contenedor del título principal */
 .title-container {
   position: absolute;
-  top: 30px; /* Ajusta según la altura del encabezado */
+  top: calc(56px + 30px); /* Ajusta según la altura del encabezado */
   width: 100%;
   text-align: center;
   color: white;
@@ -116,4 +122,3 @@ ion-title.title-bold {
 .title-bold {
   font-weight: bold;
 }
-

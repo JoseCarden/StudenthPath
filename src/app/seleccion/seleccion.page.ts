@@ -32,5 +32,8 @@ export class SeleccionPage implements OnInit {
     window.open('http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Ahome%3Aconsultas%3Anotas-desertores.saiku', '_blank');
   }
   
-  
+  goToMuestraTotal() {
+    this.navCtrl.navigateForward('/muestra-total');
+  }
+
 }
