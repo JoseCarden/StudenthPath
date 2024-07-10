@@ -54,4 +54,8 @@ export class MuestraTotalPage implements OnInit {
     const iframeSrc = 'http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Ahome%3Aconsultas%3Aescala-estudiante.saiku';
     window.open(iframeSrc, '_blank');
   }
+  llevarP2() {
+    const iframeSrc = 'http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Ahome%3Aconsultas%3Acarreras-registradas.saiku';
+    window.open(iframeSrc, '_blank');
+  }
 }

@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'muestra-total',
     loadChildren: () => import('./muestra-total/muestra-total.module').then( m => m.MuestraTotalPageModule)
   },
+  {
+    path: 'chat-bot',
+    loadChildren: () => import('./chat-bot/chat-bot.module').then( m => m.ChatBotPageModule)
+  },
 ];
 
 @NgModule({
