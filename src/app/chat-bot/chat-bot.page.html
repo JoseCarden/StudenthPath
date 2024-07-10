@@ -2,4 +2,22 @@
   <video autoplay muted loop id="video-background" preload="auto" onended="this.play()">
     <source src="../assets/Videos/fondo4.mp4" type="video/mp4">
   </video>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="selectOption('A')">Casilla A</ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="selectOption('B')">Casilla B</ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="selectOption('C')">Casilla C</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="response">
+      <ion-col size="12">
+        <p>{{ response }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

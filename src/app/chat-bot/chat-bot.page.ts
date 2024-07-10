@@ -1,20 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http'; // Asegúrate de importar HttpClientModule si no está
 
 @Component({
   selector: 'app-chat-bot',
   templateUrl: './chat-bot.page.html',
   styleUrls: ['./chat-bot.page.scss'],
 })
-export class ChatBotPage implements OnInit {
+export class ChatBotPage {
+  response: string = '';
 
-  constructor(
-    private navCtrl: NavController,
-    private http: HttpClient // Agregar el módulo HttpClient
-  ) { }
+  constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {
+  selectOption(option: string) {
+    switch (option) {
+      case 'A':
+        this.response = 'Respuesta A';
+        break;
+      case 'B':
+        this.response = 'Respuesta B';
+        break;
+      case 'C':
+        this.response = 'Respuesta C';
+        break;
+      default:
+        this.response = '';
+        break;
+    }
   }
 
   goToNotasPon() {
@@ -28,12 +39,12 @@ export class ChatBotPage implements OnInit {
   goToEstudiAnual() {
     this.navCtrl.navigateForward('/estudi-anual');
   }
+
   goToNotasDesertores() {
     window.open('http://localhost:8080/pentaho/content/saiku-ui/index.html?biplugin5=true&dimension_prefetch=false#query/open/%3Ahome%3Aconsultas%3Anotas-desertores.saiku', '_blank');
   }
-  
+
   goToMuestraTotal() {
     this.navCtrl.navigateForward('/muestra-total');
   }
-
 }

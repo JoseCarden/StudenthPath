@@ -1,4 +1,4 @@
-/* Custom styles for video background */
+/* Estilos para el video de fondo */
 #video-background {
   position: fixed;
   top: 0;
@@ -10,9 +10,33 @@
   animation: moveBackground 10s linear infinite alternate;
 }
 
+/* Asegura que ion-content esté en frente del video */
 ion-content {
   position: relative;
-  z-index: 1; /* Ensure the content is in front of the video */
+  z-index: 1;
+  padding-top: 56px; /* Ajusta según la altura del encabezado */
+}
+
+/* Estilos para la barra de herramientas dentro del encabezado */
+ion-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  ion-toolbar {
+    width: 100%;
+    max-width: 100%;
+    --background: rgb(126, 11, 11); /* Color de fondo de la toolbar */
+  }
+}
+
+/* Ajuste para el título dentro de ion-toolbar */
+ion-title.title-bold {
+  max-width: 100%;
+  white-space: nowrap; /* Evita que el título se rompa en varias líneas */
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos si el título es demasiado largo */
 }
 
 .button-container {
